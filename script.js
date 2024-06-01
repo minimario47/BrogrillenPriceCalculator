@@ -1,5 +1,5 @@
 const menu = [
-    { number: 1, name: "Margareta", price: 115.00 },
+    { number: , name: "Margareta", price: 115.00 },
     { number: 2, name: "Al Fungi", price: 125.00 },
     { number: 3, name: "Vesuvio", price: 125.00 },
     { number: 4, name: "Capricciosa", price: 125.00 },
