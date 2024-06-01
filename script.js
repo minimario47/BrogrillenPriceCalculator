@@ -144,6 +144,7 @@ const menu = [
 
 
 
+
 const cart = {};
 
 document.getElementById('search-input').addEventListener('input', function() {
@@ -171,12 +172,13 @@ document.getElementById('results').addEventListener('click', function(e) {
         const number = e.target.getAttribute('data-number');
 
         if (!cart[number]) {
-            cart[number] = { quantity: 0, price: price };
+            cart[number] = { name: menu.find(item => item.number == number).name, quantity: 0, price: price };
         }
         cart[number].quantity += 1;
 
         updateTotalPrice();
         updateQuantityDisplay(number);
+        updateSelectedItems();
     }
 
     if (e.target.classList.contains('minus')) {
@@ -192,6 +194,7 @@ document.getElementById('results').addEventListener('click', function(e) {
 
         updateTotalPrice();
         updateQuantityDisplay(number);
+        updateSelectedItems();
     }
 });
 
@@ -199,6 +202,7 @@ document.getElementById('reset-button').addEventListener('click', function() {
     document.getElementById('search-input').value = '';
     document.getElementById('results').innerHTML = '';
     document.getElementById('total-price').textContent = '0.00 kr';
+    document.getElementById('selected-items').innerHTML = '';
     for (let key in cart) {
         updateQuantityDisplay(key, 0);
     }
@@ -220,6 +224,19 @@ function updateQuantityDisplay(number, quantity = null) {
     }
 }
 
+function updateSelectedItems() {
+    const selectedItemsContainer = document.getElementById('selected-items');
+    selectedItemsContainer.innerHTML = '';
+
+    Object.values(cart).forEach(item => {
+        if (item.quantity > 0) {
+            const div = document.createElement('div');
+            div.textContent = `${item.name}: ${item.quantity} x ${item.price} kr`;
+            selectedItemsContainer.appendChild(div);
+        }
+    });
+}
+
 // CSS styles for added items
 const style = document.createElement('style');
 style.innerHTML = `
@@ -230,6 +247,9 @@ style.innerHTML = `
     .quantity {
         margin-left: 10px;
         font-weight: bold;
+    }
+    #selected-items div {
+        margin-top: 5px;
     }
 `;
 document.head.appendChild(style);
