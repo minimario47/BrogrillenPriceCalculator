@@ -144,6 +144,8 @@ const menu = [
 
 
 
+const cart = {};
+
 document.getElementById('search-input').addEventListener('input', function() {
     const query = this.value.toLowerCase();
     const results = menu.filter(item => 
@@ -155,24 +157,41 @@ document.getElementById('search-input').addEventListener('input', function() {
 
     results.forEach(item => {
         const li = document.createElement('li');
-        li.innerHTML = `${item.name} - ${item.price} kr <button data-number="${item.number}" data-price="${item.price}">+</button>`;
+        li.innerHTML = `${item.name} - ${item.price} kr 
+            <button class="plus" data-number="${item.number}" data-price="${item.price}">+</button>
+            <button class="minus" data-number="${item.number}" data-price="${item.price}">-</button>
+            <span class="quantity" id="quantity-${item.number}">0</span>`;
         resultsContainer.appendChild(li);
     });
 });
 
 document.getElementById('results').addEventListener('click', function(e) {
-    if (e.target.tagName === 'BUTTON') {
+    if (e.target.classList.contains('plus')) {
         const price = parseFloat(e.target.getAttribute('data-price'));
         const number = e.target.getAttribute('data-number');
-        const totalPriceElement = document.getElementById('total-price');
-        const currentTotal = parseFloat(totalPriceElement.textContent.split(' ')[0]);
-        const newTotal = currentTotal + price;
-        totalPriceElement.textContent = `${newTotal.toFixed(2)} kr`;
 
-        // Mark the item as added
-        const itemElement = e.target.parentElement;
-        itemElement.classList.add('added');
-        e.target.disabled = true; // Disable the button after adding
+        if (!cart[number]) {
+            cart[number] = { quantity: 0, price: price };
+        }
+        cart[number].quantity += 1;
+
+        updateTotalPrice();
+        updateQuantityDisplay(number);
+    }
+
+    if (e.target.classList.contains('minus')) {
+        const price = parseFloat(e.target.getAttribute('data-price'));
+        const number = e.target.getAttribute('data-number');
+
+        if (cart[number] && cart[number].quantity > 0) {
+            cart[number].quantity -= 1;
+            if (cart[number].quantity === 0) {
+                delete cart[number];
+            }
+        }
+
+        updateTotalPrice();
+        updateQuantityDisplay(number);
     }
 });
 
@@ -180,7 +199,26 @@ document.getElementById('reset-button').addEventListener('click', function() {
     document.getElementById('search-input').value = '';
     document.getElementById('results').innerHTML = '';
     document.getElementById('total-price').textContent = '0.00 kr';
+    for (let key in cart) {
+        updateQuantityDisplay(key, 0);
+    }
+    Object.keys(cart).forEach(key => delete cart[key]);
 });
+
+function updateTotalPrice() {
+    const totalPriceElement = document.getElementById('total-price');
+    const total = Object.values(cart).reduce((sum, item) => sum + item.quantity * item.price, 0);
+    totalPriceElement.textContent = `${total.toFixed(2)} kr`;
+}
+
+function updateQuantityDisplay(number, quantity = null) {
+    const quantityElement = document.getElementById(`quantity-${number}`);
+    if (quantity === null) {
+        quantityElement.textContent = cart[number] ? cart[number].quantity : 0;
+    } else {
+        quantityElement.textContent = quantity;
+    }
+}
 
 // CSS styles for added items
 const style = document.createElement('style');
@@ -189,6 +227,9 @@ style.innerHTML = `
         background-color: #d4edda;
         color: #155724;
     }
+    .quantity {
+        margin-left: 10px;
+        font-weight: bold;
+    }
 `;
 document.head.appendChild(style);
-
