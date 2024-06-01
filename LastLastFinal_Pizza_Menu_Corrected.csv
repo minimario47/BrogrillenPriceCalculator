@@ -1,0 +1,143 @@
+number,name,price
+1,Margareta,115.00 kr
+2,Al Fungi,125.00 kr
+3,Vesuvio,125.00 kr
+4,Capricciosa,125.00 kr
+5,Hawaii,125.00 kr
+6,Altonno,125.00 kr
+7,Salami,125.00 kr
+8,Mamma Mia,125.00 kr
+9,Romana,125.00 kr
+10,Milanese,125.00 kr
+11,Opera,130.00 kr
+12,Bahamas,130.00 kr
+13,Mexikansk Pizza (Stark),135.00 kr
+14,Azteka,130.00 kr
+15,Picante,130.00 kr
+16,Cannibale,130.00 kr
+17,Tommaso,130.00 kr
+18,Marinara,130.00 kr
+19,Vegetariana,130.00 kr
+20,Quattro Stagioni,135.00 kr
+21,Tropicana,130.00 kr
+22,Palermo,130.00 kr
+23,Orientale,130.00 kr
+24,Napoli,130.00 kr
+25,Robot Special,130.00 kr
+26,Värmland,130.00 kr
+27,Freden,130.00 kr
+28,Matador,135.00 kr
+29,Gorgonzola,135.00 kr
+30,Afrikana,135.00 kr
+31,Pizza Oscar,135.00 kr
+32,España,135.00 kr
+33,Frutti Di Mare,135.00 kr
+34,Henån Special,135.00 kr
+35,Torino,140.00 kr
+36,Calzone,125.00 kr
+37,Calzone Special,130.00 kr
+38,Ciao Ciao,150.00 kr
+39,Viking Båt (Halvinbakad),150.00 kr
+40,San Remo (Halvinbakad),145.00 kr
+41,Disco (Dubbel deg som tefat),140.00 kr
+42,Taxi Special (Halvinbakad),140.00 kr
+43,Acapulco (Stark),150.00 kr
+44,Amadeus,150.00 kr
+45,Vagabond,150.00 kr
+46,Reale,150.00 kr
+47,Milano,150.00 kr
+48,Gourmé,150.00 kr
+,Liffner Special,160.00 kr
+49,Kebabpizza,135.00 kr
+50,Favoriten,140.00 kr
+51,Provenciale,140.00 kr
+52,Pizza Special,140.00 kr
+53,Testarossa,140.00 kr
+54,Amed,145.00 kr
+55,Orust Special,150.00 kr
+56,Husets Special,150.00 kr
+57,Bombay Special,135.00 kr
+58,La Maffia,135.00 kr
+59,Pollo,140.00 kr
+60,Kyckling Special,140.00 kr
+61,Flygande Jakob,135.00 kr
+62,Primavera,145.00 kr
+63,Pasquala,145.00 kr
+64,Venedig,145.00 kr
+65,La Bella,145.00 kr
+66,Parma,145.00 kr
+number,name,price
+,Standard Pita,125.00 kr
+,Grekisk Pita,130.00 kr
+,Mexikansk Pita,130.00 kr
+,Kebabtallrik,130.00 kr
+,Kebabrulle,125.00 kr
+,Kebabrulle Mix,130.00 kr
+,Kycklingkebab (Hembakat Pitabröd),130.00 kr
+,Kycklingrulle,130.00 kr
+,Kycklingtallrik,135.00 kr
+,Kycklingtallrik mix,140.00 kr
+,Amerikansk sallad,130.00 kr
+,Tonfisksallad,130.00 kr
+,Kycklingsallad,130.00 kr
+,Kebabsallad,130.00 kr
+,Grekisk Sallad,130.00 kr
+,Du Chef,130.00 kr
+,Skaldjurssallad,135.00 kr
+,Räksallad,130.00 kr
+,Kebabsallad Mix,135.00 kr
+,Köttbullar 8st,125.00 kr
+,Ägg & Bacon,145.00 kr
+,Fish´n Chips,145.00 kr
+,Pytt I Panna,145.00 kr
+,Schnitzel,145.00 kr
+,Lövbiff,145.00 kr
+,Pasta Alfredo,145.00 kr
+,Kycklingpasta,145.00 kr
+,Pasta Riviera,145.00 kr
+,Pasta Gongonzola,145.00 kr
+,Lasagne,145.00 kr
+,Pasta Indiana,145.00 kr
+,Smal Kokt/Grillad (bröd),45.00 kr
+,Smal Kokt/Grillad (mos),80.00 kr
+,Smal Kokt/Grillad (pommes),85.00 kr
+,Tjock Korv (bröd),55.00 kr
+,Tjock Korv (mos),90.00 kr
+,Tjock Korv (pommes),95.00 kr
+,Hel special,90.00 kr
+,Halv Special,80.00 kr
+,Hel Special Tjock,110.00 kr
+,Halv Special Tjock,90.00 kr
+,Hamburgare (90 gram),85.00 kr
+,Hamburgare (150 gram),95.00 kr
+,Ostburgare (90 gram),90.00 kr
+,Ostburgare (150 gram),100.00 kr
+,Baconburgare (90 gram),95.00 kr
+,Baconburgare (150 gram),105.00 kr
+,Hawaiiburgare (90 gram),90.00 kr
+,Hawaiiburgare (150 gram),100.00 kr
+,Västkustburgare (90 gram),100.00 kr
+,Västkustburgare (150 gram),110.00 kr
+,Dubbelburgare (90 gram),115.00 kr
+,Dubbelburgare (150 gram),125.00 kr
+,Dubbelburgare Lyx (Västkustsallad) (90 gram),130.00 kr
+,Dubbelburgare Lyx (Västkustsallad) (150 gram),140.00 kr
+,Hamburgare Meny 90 gram (dricka + strips),125.00 kr
+,Hamburgare Meny 150 gram,135.00 kr
+,Crispy Kyckling Burgare (Med pommes och dricka),140.00 kr
+,Chicken Nuggets (6st) Med Pommes,135.00 kr
+,Chicken Fingers (5st) Med Pommes,135.00 kr
+,Falafel (pitabröd),115.00 kr
+,Falafel (rulle),115.00 kr
+,Falafel (tallrik),120.00 kr
+number,name,price
+,Barnpizza (tillbehör),10.00 kr
+,Köttvaror (tillbehör),25.00 kr
+,Ost (tillbehör),20.00 kr
+,Skaldjur (tillbehör),25.00 kr
+,Grönsaker (tillbehör),20.00 kr
+,Sås (tillbehör),15.00 kr
+,Mosbricka (tillbehör),60.00 kr
+,Pommestallrik (tillbehör),60.00 kr
+,Västkustsallad (tillbehör),25.00 kr
+,Glutenfri pizza (tillbehör),25.00 kr
