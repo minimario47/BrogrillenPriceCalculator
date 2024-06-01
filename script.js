@@ -142,18 +142,20 @@ const menu = [
     // Add more items as needed
 ];
 
+
+
 document.getElementById('search-input').addEventListener('input', function() {
     const query = this.value.toLowerCase();
     const results = menu.filter(item => 
         item.name.toLowerCase().includes(query) || item.number.toString().includes(query)
-    );
+    ).slice(0, 5); // Limit to 5 results
     
     const resultsContainer = document.getElementById('results');
     resultsContainer.innerHTML = '';
 
     results.forEach(item => {
         const li = document.createElement('li');
-        li.innerHTML = `${item.name} - ${item.price} kr <button data-price="${item.price}">+</button>`;
+        li.innerHTML = `${item.name} - ${item.price} kr <button data-number="${item.number}" data-price="${item.price}">+</button>`;
         resultsContainer.appendChild(li);
     });
 });
@@ -161,10 +163,16 @@ document.getElementById('search-input').addEventListener('input', function() {
 document.getElementById('results').addEventListener('click', function(e) {
     if (e.target.tagName === 'BUTTON') {
         const price = parseFloat(e.target.getAttribute('data-price'));
+        const number = e.target.getAttribute('data-number');
         const totalPriceElement = document.getElementById('total-price');
         const currentTotal = parseFloat(totalPriceElement.textContent.split(' ')[0]);
         const newTotal = currentTotal + price;
         totalPriceElement.textContent = `${newTotal.toFixed(2)} kr`;
+
+        // Mark the item as added
+        const itemElement = e.target.parentElement;
+        itemElement.classList.add('added');
+        e.target.disabled = true; // Disable the button after adding
     }
 });
 
@@ -173,3 +181,14 @@ document.getElementById('reset-button').addEventListener('click', function() {
     document.getElementById('results').innerHTML = '';
     document.getElementById('total-price').textContent = '0.00 kr';
 });
+
+// CSS styles for added items
+const style = document.createElement('style');
+style.innerHTML = `
+    .added {
+        background-color: #d4edda;
+        color: #155724;
+    }
+`;
+document.head.appendChild(style);
+
