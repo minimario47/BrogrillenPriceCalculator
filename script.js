@@ -150,7 +150,7 @@ const cart = {};
 document.getElementById('search-input').addEventListener('input', function() {
     const query = this.value.toLowerCase();
     const results = menu.filter(item => 
-        item.name.toLowerCase().includes(query) || item.number.toString().includes(query)
+        item.name.toLowerCase().startsWith(query) || item.number.toString().startsWith(query)
     ).slice(0, 5); // Limit to 5 results
     
     const resultsContainer = document.getElementById('results');
@@ -253,3 +253,4 @@ style.innerHTML = `
     }
 `;
 document.head.appendChild(style);
+
